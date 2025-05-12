@@ -1,4 +1,31 @@
-@import "tailwindcss";
+@import "tailwindcss/preflight";
+@tailwind utilities;
+
+@font-face {
+  font-family: "Haettenschweiler";
+  src: url("/fonts/Haettenschweiler.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "HelveticaNeueLTStd";
+  src: url("/fonts/HelveticaNeueLTStd-BdCn.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: condensed;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "HelveticaNeueLTStd";
+  src: url("/fonts/HelveticaNeueLTStd-ThCn.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+  font-stretch: condensed;
+  font-display: swap;
+}
 
 :root {
   --background: #ffffff;
@@ -23,4 +50,8 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.font-haettenschweiler {
+  font-family: var(--font-haettenschweiler), sans-serif;
 }
