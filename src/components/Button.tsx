@@ -19,20 +19,24 @@ export default function Button({
         bg-white 
         rounded-[50px] 
         px-6 
-        py-3 
+        md:px-10
+        lg:px-16
+        py-3
+        md:py-5
         inline-block
         text-center
         border-1
         border-[var(--blue)]
-        drop-shadow-[0_2px_0_var(--blue)]
-        hover:drop-shadow-none
+        shadow-[0_2px_0_var(--blue)]
+        lg:shadow-[0_7px_0_var(--blue)]
+        hover:shadow-none
         hover:translate-y-1
         transition-all
         duration-300
         ${className}
       `}
     >
-      <h2 className="m-0">{children}</h2>
+      <h2 className="m-0 lg:text-2xl">{children}</h2>
     </Link>
   );
 }
