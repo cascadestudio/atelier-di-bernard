@@ -21,7 +21,7 @@ export default function Home() {
           height={1651}
           className="h-24 md:h-32 lg:h-48 w-auto"
         />
-        <h1 className="text-white text-center text-stroke-blue mt-6 md:mt-9 drop-shadow-[0_2px_0_var(--blue)] lg:drop-shadow-[0_7px_0_var(--blue)]">
+        <h1 className="text-center mt-6 md:mt-9">
           L&apos;Atelier di Bernard, <br />
           un lieu de création partagé
         </h1>
