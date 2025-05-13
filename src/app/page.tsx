@@ -28,7 +28,7 @@ export default function Home() {
         <h3 className="text-[var(--blue)] text-center mt-3 md:mt-4">
           97 rue Jean de Bernardy, 13001 Marseille
         </h3>
-        <Button href="/" className="mt-6 md:mt-14 lg:mt-14">
+        <Button href="/home" className="mt-6 md:mt-14 lg:mt-14">
           Entrer
         </Button>
       </div>
