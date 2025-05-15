@@ -19,11 +19,17 @@ const config: Config = {
           "sans-serif",
         ],
       },
-
-      // Rest of your Tailwind config...
+      animation: {
+        progress: "progress 3s linear forwards",
+      },
+      keyframes: {
+        progress: {
+          "0%": { width: "0%" },
+          "100%": { width: "100%" },
+        },
+      },
     },
   },
-  // Rest of your config...
 };
 
 export default config;
