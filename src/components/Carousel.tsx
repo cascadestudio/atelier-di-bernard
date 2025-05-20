@@ -35,7 +35,7 @@ export default function Carousel() {
       } else if (count >= 100 + pause / tick) {
         // Start transition before changing slide
         setTransitioning(true);
-
+        setLoaded(false);
         // Save current index for crossfade
         setPrevIndex(currentIndex);
 
@@ -44,7 +44,6 @@ export default function Carousel() {
           setCurrentIndex((i) => (i + 1) % images.length);
           setProgress(0);
           setResetting(false);
-          setLoaded(false); // trigger fade-in
 
           // End transition after new slide is displayed
           setTimeout(() => {
@@ -71,6 +70,7 @@ export default function Carousel() {
           style={{
             opacity: loaded ? 1 : 0,
             transitionDuration: `${fadeDur}ms`,
+            transitionTimingFunction: "ease-in-out",
           }}
         >
           <Image
@@ -79,7 +79,7 @@ export default function Carousel() {
             alt={`Slide ${currentIndex + 1}`}
             fill
             className="object-cover"
-            onLoadingComplete={() => setLoaded(true)}
+            onLoad={() => setLoaded(true)}
             priority
           />
         </div>
@@ -89,8 +89,9 @@ export default function Carousel() {
           <div
             className="absolute inset-0 transition-opacity duration-600"
             style={{
-              opacity: transitioning ? 0 : 1,
+              opacity: 0,
               transitionDuration: `${fadeDur}ms`,
+              transitionTimingFunction: "ease-in-out",
             }}
           >
             <Image
