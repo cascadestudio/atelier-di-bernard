@@ -57,7 +57,7 @@ export default function Carousel() {
     }, tick);
 
     return () => clearInterval(interval);
-  }, [currentIndex]);
+  }, [currentIndex, tick]);
 
   const key = `slide-${currentIndex}`;
 
