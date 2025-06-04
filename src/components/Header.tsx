@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white border-b border-[var(--blue)] flex items-center justify-between">
-      <Link href="/" className="flex items-center gap-2 px-4 py-1">
+    <header className="fixed top-0 left-0 right-0 bg-white border-b border-[var(--blue)] flex items-center justify-between z-10">
+      <Link href="/" className="flex items-center gap-2 px-4 lg:px-8 py-1">
         <Image
           src="/images/banniere.png"
           alt="Banniere"

@@ -35,6 +35,19 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --header-height: 49px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --header-height: 65px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --header-height: 73px;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -115,7 +128,7 @@ body {
     }
   }
   p {
-    font-family: var(--font-helvetica-bdcn), sans-serif;
+    font-family: var(--font-helvetica-neue-bdcn), sans-serif;
     color: var(--blue);
     font-size: 15px;
     line-height: 15px;
@@ -125,7 +138,7 @@ body {
     }
     @media (min-width: 1024px) {
       font-size: 18px;
-      line-height: 150%;
+      line-height: 120%;
     }
   }
 }
