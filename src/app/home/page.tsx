@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Carousel from "@/components/Carousel";
 import PresentationSection from "@/components/PresentationSection";
+import EventsSection from "@/components/EventsSection";
 
 export default function HomePage() {
   return (
@@ -16,6 +17,7 @@ export default function HomePage() {
         </div>
       </div>
       <PresentationSection />
+      <EventsSection />
     </main>
   );
 }
