@@ -31,6 +31,7 @@
   --foreground: var(--blue);
   --blue: #1f4d9b;
   --pink: #efcdc9;
+  --light-blue: #e4f4f4;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);

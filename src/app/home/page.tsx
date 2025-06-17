@@ -2,6 +2,8 @@ import Header from "@/components/Header";
 import Carousel from "@/components/Carousel";
 import PresentationSection from "@/components/PresentationSection";
 import EventsSection from "@/components/EventsSection";
+import ResidentsSection from "@/components/ResidentsSection";
+import NewsletterSection from "@/components/NewsletterSection";
 
 export default function HomePage() {
   return (
@@ -18,6 +20,8 @@ export default function HomePage() {
       </div>
       <PresentationSection />
       <EventsSection />
+      <NewsletterSection />
+      <ResidentsSection />
     </main>
   );
 }

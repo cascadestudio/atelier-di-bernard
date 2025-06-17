@@ -56,7 +56,7 @@ export default function EventsSection() {
   };
 
   return (
-    <section className="md:h-[calc(100vh-var(--header-height))] flex flex-col relative">
+    <section className=" flex flex-col relative">
       {/* Header section */}
       <div className="grid grid-cols-1 md:grid-cols-6 gap-4 border-b border-[var(--blue)] px-4 md:px-8 py-6 md:py-8 lg:py-14">
         <h2 className="col-span-1 md:col-span-1 lg:col-span-2 lg:self-center">
@@ -107,7 +107,7 @@ export default function EventsSection() {
             )}
 
             {/* Content with higher z-index */}
-            <div className="relative z-10 col-span-1 md:col-span-4 lg:col-span-5">
+            <div className="relative col-span-1 md:col-span-4 lg:col-span-5">
               <h2
                 className={`transition-colors duration-300 ${
                   hoveredEvent === event._id ? "text-white" : ""
@@ -123,7 +123,7 @@ export default function EventsSection() {
                 {event.artist}
               </h4>
             </div>
-            <div className="relative z-10 col-span-1 md:col-span-2 lg:col-span-1 flex justify-between md:justify-end items-center">
+            <div className="relative col-span-1 md:col-span-2 lg:col-span-1 flex justify-between md:justify-end items-center">
               <h4
                 className={`md:hidden transition-colors duration-300 ${
                   hoveredEvent === event._id ? "text-white" : ""
@@ -147,9 +147,7 @@ export default function EventsSection() {
         {/* Empty state */}
         {events.length === 0 && (
           <div className="flex items-center justify-center h-32">
-            <p className="text-gray-500">
-              No events found. Add some events in Sanity Studio.
-            </p>
+            <p className="text-gray-500">Chargement...</p>
           </div>
         )}
       </div>
@@ -160,7 +158,7 @@ export default function EventsSection() {
           const event = events.find((e) => e._id === hoveredEvent);
           return event?.image ? (
             <div
-              className="fixed pointer-events-none z-[9999] transition-opacity duration-300"
+              className="fixed pointer-events-none z-10 transition-opacity duration-300"
               style={{
                 left: hoverPosition.x,
                 top: hoverPosition.y,
