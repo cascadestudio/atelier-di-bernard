@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { client } from "@/sanity/lib/client";
@@ -11,7 +10,7 @@ interface Event {
   _id: string;
   title: string;
   artist: string;
-  date: string;
+  date: Date;
   image?: {
     asset: {
       _ref: string;
@@ -48,6 +47,14 @@ export default function EventsSection() {
     setHoveredEvent(eventId);
   };
 
+  const formatFrenchDate = (date: Date | string) => {
+    return new Date(date).toLocaleDateString("fr-FR", {
+      day: "2-digit",
+      month: "long",
+      year: "numeric",
+    });
+  };
+
   return (
     <section className="md:h-[calc(100vh-var(--header-height))] flex flex-col relative">
       {/* Header section */}
@@ -60,13 +67,15 @@ export default function EventsSection() {
           des résidents ou de personnes extérieures : vernissages, expositions,
           ateliers participatifs.
         </p>
-        <div className="col-span-1 md:col-span-1 lg:col-span-1 flex justify-end items-center">
-          <Link
-            href="/evenements"
-            className="text-[var(--blue)] hover:underline font-medium"
+        <div className="col-span-1 md:col-span-1 lg:col-span-1 flex items-center">
+          <a
+            href="https://www.instagram.com/atelierdibernard/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[var(--blue)] font-medium flex items-center gap-2"
           >
-            TOUT VOIR
-          </Link>
+            <h3>Tout voir</h3>
+          </a>
         </div>
       </div>
 
@@ -129,7 +138,7 @@ export default function EventsSection() {
                     : "text-[var(--blue)]"
                 }`}
               >
-                <time>{event.date}</time>
+                <time>{formatFrenchDate(event.date)}</time>
               </h4>
             </div>
           </a>
