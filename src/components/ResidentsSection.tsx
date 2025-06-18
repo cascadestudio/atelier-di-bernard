@@ -58,19 +58,35 @@ export default function ResidentsSection() {
               } border-[var(--blue)]  py-6 md:py-8 flex flex-col`}
             >
               {/* Artist Image */}
-              <div className="relative w-full aspect-square mb-4 overflow-hidden">
+              <div className="relative w-full mb-4 overflow-hidden flex justify-center items-center h-[200px] md:h-[530px]">
                 {artist.image ? (
-                  <div className="relative w-full h-full rounded-full overflow-hidden">
+                  <div
+                    className="relative overflow-hidden bg-gray-100 w-[120px] h-[180px] md:w-[360px] md:h-[530px]"
+                    style={{
+                      borderRadius: "50%",
+                      transform: "rotate(45deg)",
+                    }}
+                  >
                     <Image
-                      src={urlFor(artist.image).width(400).height(400).url()}
+                      src={urlFor(artist.image).width(600).height(800).url()}
                       alt={artist.image.alt || artist.name}
                       fill
                       className="object-cover"
+                      style={{ transform: "rotate(-45deg) scale(1.3)" }}
                     />
                   </div>
                 ) : (
-                  <div className="w-full h-full rounded-full bg-gray-200 flex items-center justify-center">
-                    <span className="text-gray-400 text-2xl">
+                  <div
+                    className="bg-gray-200 flex items-center justify-center w-[120px] h-[180px] md:w-[360px] md:h-[530px]"
+                    style={{
+                      borderRadius: "50%",
+                      transform: "rotate(45deg)",
+                    }}
+                  >
+                    <span
+                      className="text-gray-400 text-2xl"
+                      style={{ transform: "rotate(-45deg)" }}
+                    >
                       {artist.name.charAt(0)}
                     </span>
                   </div>
