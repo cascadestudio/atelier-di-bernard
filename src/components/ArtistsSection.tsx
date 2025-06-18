@@ -18,7 +18,7 @@ interface Artist {
   };
 }
 
-export default function ResidentsSection() {
+export default function ArtistsSection() {
   const [artists, setArtists] = useState<Artist[]>([]);
 
   useEffect(() => {
@@ -37,9 +37,11 @@ export default function ResidentsSection() {
   return (
     <section className=" flex flex-col">
       {/* Header */}
-      <div className="border-b border-[var(--blue)] px-4 md:px-8 py-6 md:py-8">
-        <h2 className="mb-4">Résidents</h2>
-        <p className="text-sm d:text-base">
+      <div className="grid grid-cols-1 md:grid-cols-6 gap-4 border-b border-[var(--blue)] px-4 md:px-8 py-6 md:py-8">
+        <h2 className="col-span-1 md:col-span-2 lg:col-span-3 lg:self-center">
+          Résidents
+        </h2>
+        <p className="col-span-1 md:col-span-4 lg:col-span-3">
           L&apos;atelier accueille une grande diversité de pratiques : peinture,
           sérigraphie, architecture, design, développement web ou encore stop
           motion. Cette cohabitation favorise les échanges, les collaborations
@@ -53,12 +55,12 @@ export default function ResidentsSection() {
           {artists.map((artist, index) => (
             <div
               key={artist._id}
-              className={`border-b border-[var(--blue)] ${
+              className={`${
                 index % 3 !== 2 ? "md:border-r" : ""
-              } border-[var(--blue)]  py-6 md:py-8 flex flex-col`}
+              } border-[var(--blue)] flex flex-col`}
             >
               {/* Artist Image */}
-              <div className="relative w-full mb-4 overflow-hidden flex justify-center items-center h-[200px] md:h-[530px]">
+              <div className="relative w-full overflow-hidden flex justify-center items-center h-[200px] md:h-[530px]">
                 {artist.image ? (
                   <div
                     className="relative overflow-hidden bg-gray-100 w-[120px] h-[180px] md:w-[360px] md:h-[530px]"
@@ -94,11 +96,9 @@ export default function ResidentsSection() {
               </div>
 
               {/* Artist Info */}
-              <div className="text-center border-t border-b border-[var(--blue)] py-4">
-                <h3 className="mb-2">{artist.name}</h3>
-                <h4 className="text-[var(--blue)] uppercase">
-                  {artist.practice}
-                </h4>
+              <div className="flex flex-row justify-between items-center lg:flex-col lg:items-start lg:gap-2 border-t border-b border-[var(--blue)] px-4 py-3 md:p-6">
+                <h2>{artist.name}</h2>
+                <h4 className="text-[var(--blue)]">{artist.practice}</h4>
               </div>
             </div>
           ))}

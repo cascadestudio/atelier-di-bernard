@@ -58,16 +58,16 @@ export default function EventsSection() {
   return (
     <section className=" flex flex-col relative">
       {/* Header section */}
-      <div className="grid grid-cols-1 md:grid-cols-6 gap-4 border-b border-[var(--blue)] px-4 md:px-8 py-6 md:py-8 lg:py-14">
-        <h2 className="col-span-1 md:col-span-1 lg:col-span-2 lg:self-center">
+      <div className="grid grid-cols-1 md:grid-cols-6 gap-4 border-b border-[var(--blue)] px-4 md:px-8 py-6 md:py-8">
+        <h2 className="col-span-1 md:col-span-2 lg:col-span-3 lg:self-center">
           ÉVÉNEMENTS
         </h2>
-        <p className="col-span-1 md:col-span-4 lg:col-span-3">
+        <p className="col-span-1 md:col-span-4 lg:col-span-2">
           À l&apos;atelier nous organisons des évènements à l&apos;initiative
           des résidents ou de personnes extérieures : vernissages, expositions,
           ateliers participatifs.
         </p>
-        <div className="col-span-1 md:col-span-1 lg:col-span-1 flex items-center">
+        <div className="lg:col-span-1 lg:self-center lg:flex lg:justify-end">
           <a
             href="https://www.instagram.com/atelierdibernard/"
             target="_blank"
