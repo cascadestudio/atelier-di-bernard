@@ -37,7 +37,7 @@ export default function ArtistsSection() {
   return (
     <section className=" flex flex-col">
       {/* Header */}
-      <div className="grid grid-cols-1 md:grid-cols-6 gap-4 border-b border-[var(--blue)] px-4 md:px-8 py-6 md:py-8">
+      <div className="grid grid-cols-1 md:grid-cols-6 gap-2 border-b border-[var(--blue)] px-4 md:px-8 py-6 md:py-8">
         <h2 className="col-span-1 md:col-span-2 lg:col-span-3 lg:self-center">
           Résidents
         </h2>
@@ -51,57 +51,70 @@ export default function ArtistsSection() {
 
       {/* Artists Grid */}
       <div className="flex-1 overflow-y-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
-          {artists.map((artist, index) => (
-            <div
-              key={artist._id}
-              className={`${
-                index % 3 !== 2 ? "md:border-r" : ""
-              } border-[var(--blue)] flex flex-col`}
-            >
-              {/* Artist Image */}
-              <div className="relative w-full overflow-hidden flex justify-center items-center h-[200px] md:h-[530px]">
-                {artist.image ? (
-                  <div
-                    className="relative overflow-hidden bg-gray-100 w-[120px] h-[180px] md:w-[360px] md:h-[530px]"
-                    style={{
-                      borderRadius: "50%",
-                      transform: "rotate(45deg)",
-                    }}
-                  >
-                    <Image
-                      src={urlFor(artist.image).width(600).height(800).url()}
-                      alt={artist.image.alt || artist.name}
-                      fill
-                      className="object-cover"
-                      style={{ transform: "rotate(-45deg) scale(1.3)" }}
-                    />
+        {/* Horizontal scroll for mobile/tablet, grid for desktop */}
+        <div className="lg:grid lg:grid-cols-3 lg:gap-0">
+          {/* Mobile/Tablet: Horizontal scroll */}
+          <div className="lg:contents">
+            <div className="flex lg:contents overflow-x-auto lg:overflow-x-visible scrollbar-hide gap-0 lg:gap-0">
+              {artists.map((artist, index) => (
+                <div
+                  key={artist._id}
+                  className={`
+                    flex-shrink-0 w-[80%] md:w-[40%] lg:w-auto
+                    lg:flex-shrink
+                    border-[var(--blue)] flex flex-col
+                    ${index < artists.length - 1 ? "border-r" : ""}
+                    ${index % 3 !== 2 ? "lg:border-r" : ""}
+                  `}
+                >
+                  {/* Artist Image */}
+                  <div className="relative w-full overflow-hidden flex justify-center items-center aspect-square lg:h-[530px] lg:aspect-auto">
+                    {artist.image ? (
+                      <div
+                        className="relative overflow-hidden bg-gray-100 w-[70%] h-[105%] lg:w-[360px] lg:h-[530px]"
+                        style={{
+                          borderRadius: "50%",
+                          transform: "rotate(45deg)",
+                        }}
+                      >
+                        <Image
+                          src={urlFor(artist.image)
+                            .width(600)
+                            .height(800)
+                            .url()}
+                          alt={artist.image.alt || artist.name}
+                          fill
+                          className="object-cover"
+                          style={{ transform: "rotate(-45deg) scale(1.3)" }}
+                        />
+                      </div>
+                    ) : (
+                      <div
+                        className="bg-gray-200 flex items-center justify-center w-[70%] h-[105%] lg:w-[360px] lg:h-[530px]"
+                        style={{
+                          borderRadius: "50%",
+                          transform: "rotate(45deg)",
+                        }}
+                      >
+                        <span
+                          className="text-gray-400 text-2xl"
+                          style={{ transform: "rotate(-45deg)" }}
+                        >
+                          {artist.name.charAt(0)}
+                        </span>
+                      </div>
+                    )}
                   </div>
-                ) : (
-                  <div
-                    className="bg-gray-200 flex items-center justify-center w-[120px] h-[180px] md:w-[360px] md:h-[530px]"
-                    style={{
-                      borderRadius: "50%",
-                      transform: "rotate(45deg)",
-                    }}
-                  >
-                    <span
-                      className="text-gray-400 text-2xl"
-                      style={{ transform: "rotate(-45deg)" }}
-                    >
-                      {artist.name.charAt(0)}
-                    </span>
-                  </div>
-                )}
-              </div>
 
-              {/* Artist Info */}
-              <div className="flex flex-row justify-between items-center lg:flex-col lg:items-start lg:gap-2 border-t border-b border-[var(--blue)] px-4 py-3 md:p-6">
-                <h2>{artist.name}</h2>
-                <h4 className="text-[var(--blue)]">{artist.practice}</h4>
-              </div>
+                  {/* Artist Info */}
+                  <div className="flex flex-row justify-between items-center lg:flex-col lg:items-start lg:gap-2 border-t border-b border-[var(--blue)] px-4 py-3 md:p-6">
+                    <h2>{artist.name}</h2>
+                    <h4 className="text-[var(--blue)]">{artist.practice}</h4>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
 
         {/* Empty state */}
