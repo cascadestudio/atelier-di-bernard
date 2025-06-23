@@ -4,6 +4,7 @@ import PresentationSection from "@/components/PresentationSection";
 import EventsSection from "@/components/EventsSection";
 import NewsletterSection from "@/components/NewsletterSection";
 import ArtistsSection from "@/components/ArtistsSection";
+import Footer from "@/components/Footer";
 
 export default function HomePage() {
   return (
@@ -22,6 +23,7 @@ export default function HomePage() {
       <EventsSection />
       <NewsletterSection />
       <ArtistsSection />
+      <Footer />
     </main>
   );
 }
