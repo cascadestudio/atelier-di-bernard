@@ -82,7 +82,7 @@ export default function Footer() {
               </svg>
             </a>
           </div>
-          <p className="text-white text-center leading-5">
+          <p className="text-white text-center leading-5 md:leading-7">
             ©{new Date().getFullYear()}, Atelier di Bernard.
             Créé&nbsp;avec&nbsp;❤️&nbsp;par&nbsp;
             <a
