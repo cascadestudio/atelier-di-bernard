@@ -128,10 +128,10 @@ body {
     font-family: var(--font-helvetica-neue-bdcn), sans-serif;
     color: var(--blue);
     font-size: 15px;
-    line-height: 15px;
+    line-height: 18px;
     @media (min-width: 768px) {
       font-size: 16px;
-      line-height: 15px;
+      line-height: 18px;
     }
     @media (min-width: 1024px) {
       font-size: 18px;
