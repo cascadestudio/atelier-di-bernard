@@ -22,10 +22,11 @@ export default function PresentationSection() {
         <div className="relative w-full h-full">
           <Image
             src="/images/presentation-atelier.jpg"
-            alt="Présentation de l'Atelier di Bernard"
+            alt="Présentation de l'Atelier di Bernard - Vue intérieure de l'espace de travail partagé"
             fill
             className="object-cover border border-[var(--blue)]"
             priority
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) calc(100vw - 64px), calc(100vw - 128px)"
           />
         </div>
       </div>

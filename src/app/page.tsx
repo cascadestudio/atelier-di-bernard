@@ -7,19 +7,23 @@ export default function LandingPage() {
       <header className="border-b border-white py-1 md:py-2 lg:py-3 px-4 md:px-5 lg:px-6 flex items-center">
         <Image
           src="/images/banniere.png"
-          alt="Banniere"
+          alt="L'Atelier di Bernard - Bannière du logo"
           width={904}
           height={1286}
           className="h-12 md:h-16 lg:h-32 w-auto self-start"
+          priority
+          sizes="(max-width: 768px) 48px, (max-width: 1024px) 64px, 128px"
         />
       </header>
       <div className="flex flex-col items-center justify-center flex-1">
         <Image
           src="/images/logo.png"
-          alt="Logo"
+          alt="L'Atelier di Bernard - Logo principal, un lieu de création partagé"
           width={1405}
           height={1651}
           className="h-24 md:h-32 lg:h-48 w-auto"
+          priority
+          sizes="(max-width: 768px) 96px, (max-width: 1024px) 128px, 192px"
         />
         <h1 className="text-center mt-6 md:mt-9">
           L&apos;Atelier di Bernard, <br />

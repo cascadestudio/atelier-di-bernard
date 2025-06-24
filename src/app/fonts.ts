@@ -10,6 +10,7 @@ export const haettenschweiler = localFont({
   ],
   variable: "--font-haettenschweiler",
   display: "swap",
+  preload: true,
 });
 
 export const helveticaNeueBdCn = localFont({
@@ -18,6 +19,7 @@ export const helveticaNeueBdCn = localFont({
   style: "normal",
   variable: "--font-helvetica-neue-bdcn",
   display: "swap",
+  preload: true,
 });
 
 export const helveticaNeueThCn = localFont({
@@ -26,4 +28,5 @@ export const helveticaNeueThCn = localFont({
   style: "normal",
   variable: "--font-helvetica-neue-thcn",
   display: "swap",
+  preload: true,
 });

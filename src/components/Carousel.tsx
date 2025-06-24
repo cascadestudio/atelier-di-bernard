@@ -8,6 +8,12 @@ const images = [
   "/images/hero-image-3.jpg",
 ];
 
+const imageAltTexts = [
+  "L'Atelier di Bernard - Vue d'ensemble de l'espace de création partagé",
+  "L'Atelier di Bernard - Ateliers et espaces de travail collaboratifs",
+  "L'Atelier di Bernard - Ambiance créative et artistique du lieu",
+];
+
 export default function Carousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [progress, setProgress] = useState(0);
@@ -76,11 +82,12 @@ export default function Carousel() {
           <Image
             key={key}
             src={images[currentIndex]}
-            alt={`Slide ${currentIndex + 1}`}
+            alt={imageAltTexts[currentIndex]}
             fill
             className="object-cover"
             onLoad={() => setLoaded(true)}
             priority
+            sizes="(max-width: 1024px) 100vw, 50vw"
           />
         </div>
 
@@ -96,9 +103,10 @@ export default function Carousel() {
           >
             <Image
               src={images[prevIndex]}
-              alt={`Previous slide ${prevIndex + 1}`}
+              alt={imageAltTexts[prevIndex]}
               fill
               className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
         )}

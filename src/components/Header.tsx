@@ -7,10 +7,12 @@ export default function Header() {
       <Link href="/" className="flex items-center gap-2 px-4 lg:px-8 py-1">
         <Image
           src="/images/banniere.png"
-          alt="Banniere"
+          alt="L'Atelier di Bernard - Bannière du logo"
           width={160}
           height={40}
           className="h-10 md:h-14 lg:h-16 w-auto self-start"
+          priority
+          sizes="(max-width: 768px) 40px, (max-width: 1024px) 56px, 64px"
         />
         <h4 className="lowercase">- atelier partagé -</h4>
       </Link>

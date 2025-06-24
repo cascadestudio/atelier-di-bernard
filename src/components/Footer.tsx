@@ -11,9 +11,10 @@ export default function Footer() {
           <div className="relative w-20 h-20 flex-shrink-0">
             <Image
               src="/images/logo.png"
-              alt="Atelier di Bernard"
+              alt="L'Atelier di Bernard - Logo en pied de page"
               fill
               className="object-contain"
+              sizes="80px"
             />
           </div>
           <div>
