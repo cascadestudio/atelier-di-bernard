@@ -1,5 +1,5 @@
 // Event queries
-export const eventsQuery = `*[_type == "event"] | order(_createdAt desc) {
+export const eventsQuery = `*[_type == "event"] | order(date desc) {
   _id,
   title,
   artist,
