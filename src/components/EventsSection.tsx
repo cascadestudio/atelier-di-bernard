@@ -57,7 +57,7 @@ export default function EventsSection() {
   };
 
   return (
-    <section className=" flex flex-col relative">
+    <section id="events" className=" flex flex-col relative scroll-mt-20">
       {/* Header section */}
       <div className="grid grid-cols-1 md:grid-cols-6 gap-2 border-b border-[var(--blue)] px-4 md:px-8 py-6 md:py-8">
         <h2 className="col-span-1 md:col-span-2 lg:col-span-3 lg:self-center">
