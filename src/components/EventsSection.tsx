@@ -24,6 +24,7 @@ export default function EventsSection() {
   const [events, setEvents] = useState<Event[]>([]);
   const [hoveredEvent, setHoveredEvent] = useState<string | null>(null);
   const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
+  const [showAllEvents, setShowAllEvents] = useState(false);
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -68,27 +69,27 @@ export default function EventsSection() {
           ateliers participatifs.
         </p>
         <div className="lg:col-span-1 lg:self-center lg:flex lg:justify-end">
-          <a
-            href="https://www.instagram.com/atelierdibernard/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[var(--blue)] font-medium flex items-center gap-2"
+          <button
+            onClick={() => setShowAllEvents(!showAllEvents)}
+            className="text-[var(--blue)] font-medium flex items-center gap-2 cursor-pointer"
           >
-            <h3>Tout voir</h3>
-          </a>
+            <h3>{showAllEvents ? "Voir moins" : "Tout voir"}</h3>
+          </button>
         </div>
       </div>
 
       {/* Events list */}
       <div className="flex-1 overflow-y-auto">
-        {events.map((event, index) => (
+        {(showAllEvents ? events : events.slice(0, 5)).map((event, index) => (
           <a
             key={event._id}
             href={event.url}
             target="_blank"
             rel="noopener noreferrer"
             className={`grid grid-cols-1 md:grid-cols-6 gap-4 px-4 md:px-8 py-6 md:py-8 lg:py-14 relative overflow-visible ${
-              index < events.length - 1 ? "border-b border-[var(--blue)]" : ""
+              index < (showAllEvents ? events : events.slice(0, 5)).length - 1
+                ? "border-b border-[var(--blue)]"
+                : ""
             } transition-all duration-300 group`}
             onMouseEnter={(e) => handleMouseEnter(event._id, e)}
             onMouseLeave={() => setHoveredEvent(null)}
