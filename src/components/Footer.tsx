@@ -5,9 +5,9 @@ export default function Footer() {
   return (
     <footer className="bg-[var(--blue)] text-white">
       {/* Desktop Layout */}
-      <div className="grid grid-cols-1 md:grid-cols-6 px-8 py-8 place-items-center gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-6 px-8 py-8 place-items-center gap-8">
         {/* Left Section - Logo and Address */}
-        <div className="h-full col-span-1 md:col-span-2 flex flex-col items-center justify-center gap-3 md:gap-6">
+        <div className="h-full col-span-1 lg:col-span-2 flex flex-col items-center justify-center gap-3 md:gap-6">
           <div className="relative w-20 h-20 flex-shrink-0">
             <Image
               src="/images/logo.png"
@@ -25,7 +25,7 @@ export default function Footer() {
         </div>
 
         {/* Center Section - Social & Credits */}
-        <div className="h-full col-span-1 md:col-span-2 flex flex-col items-center justify-between gap-3 md:gap-6">
+        <div className="h-full col-span-1 lg:col-span-2 flex flex-col items-center justify-between gap-3 md:gap-6">
           <h3 className="hidden lg:block text-white text-center">
             Restons connectés
           </h3>
@@ -97,7 +97,7 @@ export default function Footer() {
         </div>
 
         {/* Right Section - Subscribe */}
-        <div className="hidden h-full col-span-1 md:col-span-2 lg:flex items-center justify-center">
+        <div className="hidden h-full col-span-1 lg:col-span-2 lg:flex items-center justify-center">
           <Button href="http://eepurl.com/h2ff7f">S&apos;inscrire</Button>
         </div>
       </div>

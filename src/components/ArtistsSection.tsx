@@ -62,13 +62,13 @@ export default function ArtistsSection() {
                   className={`
                     flex-shrink-0 w-[80%] md:w-[40%] lg:w-auto
                     lg:flex-shrink
-                    border-[var(--blue)] flex flex-col
+                    border-[var(--blue)] flex flex-col items-stretch
                     ${index < artists.length - 1 ? "border-r" : ""}
                     ${index % 3 !== 2 ? "lg:border-r" : ""}
                   `}
                 >
                   {/* Artist Image */}
-                  <div className="relative w-full overflow-hidden flex justify-center items-center aspect-square lg:h-[530px] lg:aspect-auto">
+                  <div className="relative w-full overflow-hidden flex justify-center items-center aspect-square lg:h-[530px] lg:aspect-auto flex-1">
                     {artist.image ? (
                       <div
                         className="relative overflow-hidden bg-gray-100 w-[70%] h-[105%] lg:w-[360px] lg:h-[530px]"
@@ -107,7 +107,7 @@ export default function ArtistsSection() {
                   </div>
 
                   {/* Artist Info */}
-                  <div className="flex flex-row justify-between items-center lg:flex-col lg:items-start lg:gap-2 border-t border-b border-[var(--blue)] px-4 py-3 md:p-6">
+                  <div className="flex flex-row justify-between items-center lg:flex-col lg:items-start lg:gap-2 border-t border-b border-[var(--blue)] px-4 py-3 md:p-6 flex-shrink-0">
                     <h2>{artist.name}</h2>
                     <h4 className="text-[var(--blue)]">{artist.practice}</h4>
                   </div>
