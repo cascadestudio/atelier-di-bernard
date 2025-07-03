@@ -28,6 +28,16 @@ export const artistType = defineType({
         hotspot: true,
       },
     }),
+    defineField({
+      name: "externalLink",
+      title: "External Link",
+      type: "url",
+      description: "External website or portfolio link for the artist",
+      validation: (Rule) =>
+        Rule.uri({
+          scheme: ["http", "https"],
+        }),
+    }),
   ],
   preview: {
     select: {

@@ -13,5 +13,6 @@ export const artistsQuery = `*[_type == "artist"] | order(_createdAt desc) {
   _id,
   name,
   practice,
-  image
+  image,
+  externalLink
 }`;
