@@ -65,8 +65,8 @@ export default function EventsSection() {
         </h2>
         <p className="col-span-1 md:col-span-4 lg:col-span-2">
           À l&apos;atelier nous organisons des évènements à l&apos;initiative
-          des résidents ou de personnes extérieures : vernissages, expositions,
-          ateliers participatifs.
+          des résident·e·s ou de personnes extérieures : vernissages,
+          expositions, ateliers participatifs.
         </p>
         <div className="lg:col-span-1 lg:self-center lg:flex lg:justify-end">
           <button

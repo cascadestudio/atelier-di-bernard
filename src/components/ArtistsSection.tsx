@@ -26,7 +26,7 @@ export default function ArtistsSection() {
       {/* Header */}
       <div className="grid grid-cols-1 md:grid-cols-6 gap-2 border-b border-[var(--blue)] px-4 md:px-8 py-6 md:py-8">
         <h2 className="col-span-1 md:col-span-2 lg:col-span-3 lg:self-center">
-          Résidents
+          résident·e·s
         </h2>
         <p className="col-span-1 md:col-span-4 lg:col-span-3">
           L&apos;atelier accueille une grande diversité de pratiques : peinture,
