@@ -3,7 +3,7 @@ import Button from "@/components/Button";
 
 export default function LandingPage() {
   return (
-    <main className="min-h-screen bg-[#EFCDC9] flex flex-col">
+    <main className="min-h-screen bg-[var(--pink)] flex flex-col">
       <header className="border-b border-white py-1 md:py-2 lg:py-3 px-4 md:px-5 lg:px-6 flex items-center">
         <Image
           src="/images/banniere.png"
