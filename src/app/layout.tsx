@@ -5,6 +5,7 @@ import {
   helveticaNeueThCn,
 } from "./fonts";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Atelier di Bernard",
@@ -22,6 +23,7 @@ export default function RootLayout({
         className={`${haettenschweiler.variable} ${helveticaNeueBdCn.variable} ${helveticaNeueThCn.variable}`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
