@@ -28,7 +28,7 @@ export default function Header() {
           href="#artists"
           className="px-1 lg:px-9 py-4 md:py-7 lg:py-6 bg-[var(--blue)] w-16 md:w-32 lg:w-44"
         >
-          <h4 className="text-white text-center">Artistes</h4>
+          <h4 className="text-white text-center">Résident·e·s</h4>
         </Link>
       </nav>
     </header>
