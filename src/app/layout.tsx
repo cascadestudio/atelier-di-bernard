@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     template: "%s | L'Atelier di Bernard",
   },
   description:
-    "L'Atelier di Bernard est un lieu de création partagé situé au 97 rue Jean de Bernardy, 13001 Marseille. Espace artistique pour résidents et événements culturels : vernissages, expositions, ateliers participatifs.",
+    "L'Atelier di Bernard est un espace collectif de création à Marseille.",
   keywords: [
     "atelier artistique",
     "création partagée",
@@ -38,12 +38,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "L'Atelier di Bernard - Atelier partagé",
     description:
-      "L'Atelier di Bernard est un lieu de création partagé situé au 97 rue Jean de Bernardy, 13001 Marseille. Espace artistique pour résidents et événements culturels.",
+      "L'Atelier di Bernard est un espace collectif de création à Marseille.",
     url: "https://www.atelierdibernard.fr",
     siteName: "L'Atelier di Bernard",
     images: [
       {
-        url: "https://www.atelierdibernard.fr/images/logo.png",
+        url: "https://www.atelierdibernard.fr/images/hero-image-1.jpg",
         width: 1200,
         height: 630,
         alt: "L'Atelier di Bernard - Atelier partagé",
@@ -58,8 +58,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "L'Atelier di Bernard - Atelier partagé",
     description:
-      "L'Atelier di Bernard est un lieu de création partagé situé au 97 rue Jean de Bernardy, 13001 Marseille. Espace artistique pour résidents et événements culturels.",
-    images: ["https://www.atelierdibernard.fr/images/logo.png"],
+      "L'Atelier di Bernard est un espace collectif de création à Marseille.",
+    images: ["https://www.atelierdibernard.fr/images/hero-image-1.jpg"],
   },
 
   // Additional metadata
@@ -124,7 +124,7 @@ export default function RootLayout({
                 addressCountry: "FR",
               },
               url: "https://www.atelierdibernard.fr",
-              image: "https://www.atelierdibernard.fr/images/logo.png",
+              image: "https://www.atelierdibernard.fr/images/hero-image-1.jpg",
               sameAs: [
                 "https://www.instagram.com/atelierdibernard",
                 "https://www.facebook.com/atelierdibernard",
