@@ -168,10 +168,10 @@ export default function EventsSection() {
             >
               <div className="bg-white shadow-xl border rounded-lg overflow-hidden">
                 <Image
-                  src={urlFor(event.image).width(192).height(288).url()}
+                  src={urlFor(event.image).width(210).height(300).url()}
                   alt={event.image.alt || event.title}
-                  width={192}
-                  height={288}
+                  width={210}
+                  height={300}
                   className="object-cover"
                 />
               </div>
