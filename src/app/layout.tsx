@@ -107,6 +107,27 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#1a1a1a" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+        {/* Explicit Open Graph tags for WhatsApp compatibility */}
+        <meta
+          property="og:title"
+          content="L'Atelier di Bernard - Atelier partagé"
+        />
+        <meta
+          property="og:description"
+          content="L'Atelier di Bernard est un espace collectif de création à Marseille."
+        />
+        <meta
+          property="og:image"
+          content="https://www.atelierdibernard.fr/images/hero-image-1.jpg"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:url" content="https://www.atelierdibernard.fr" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="L'Atelier di Bernard" />
+        <meta property="og:locale" content="fr_FR" />
+
         {/* Schema.org structured data */}
         <script
           type="application/ld+json"
