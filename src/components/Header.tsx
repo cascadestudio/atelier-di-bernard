@@ -22,7 +22,9 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 bg-white border-b border-[var(--blue)] flex items-center justify-between z-10 transition-all duration-300 ease-in-out ${
-        isScrolled ? "h-[var(--header-height-scrolled)]" : "h-[var(--header-height)]"
+        isScrolled
+          ? "h-[var(--header-height-scrolled)]"
+          : "h-[var(--header-height)]"
       }`}
     >
       <Link
@@ -48,7 +50,7 @@ export default function Header() {
               sizes="(max-width: 768px) 40px, (max-width: 1024px) 56px, 64px"
             />
           </div>
-          
+
           {/* Logo - visible when scrolled */}
           <div
             className={`flex items-center transition-all duration-300 ease-in-out ${
@@ -67,7 +69,7 @@ export default function Header() {
               sizes="(max-width: 768px) 32px, (max-width: 1024px) 40px, 48px"
             />
           </div>
-          
+
           {/* Text - visible when not scrolled */}
           <h4
             className={`lowercase transition-all duration-300 ease-in-out whitespace-nowrap ${
