@@ -21,8 +21,14 @@ export default function ArtistsSection() {
     fetchArtists();
   }, []);
 
+  // Group artists into rows (3 per row on desktop)
+  const artistRows: Artist[][] = [];
+  for (let i = 0; i < artists.length; i += 3) {
+    artistRows.push(artists.slice(i, i + 3));
+  }
+
   return (
-    <section id="artists" className=" flex flex-col scroll-mt-20">
+    <section id="artists" className="flex flex-col scroll-mt-20">
       {/* Header */}
       <div className="grid grid-cols-1 md:grid-cols-6 gap-2 border-b border-[var(--blue)] px-4 md:px-8 py-6 md:py-8">
         <h2 className="col-span-1 md:col-span-2 lg:col-span-3 lg:self-center">
@@ -37,22 +43,39 @@ export default function ArtistsSection() {
       </div>
 
       {/* Artists Grid */}
-      <div className="flex-1 overflow-y-auto">
-        {/* Horizontal scroll for mobile/tablet, grid for desktop */}
-        <div className="lg:grid lg:grid-cols-3 lg:gap-0">
-          {/* Mobile/Tablet: Horizontal scroll */}
-          <div className="lg:contents">
-            <div className="flex lg:contents overflow-x-auto lg:overflow-x-visible scrollbar-hide gap-0 lg:gap-0">
-              {artists.map((artist, index) => (
-                <ArtistCard
-                  key={artist._id}
-                  artist={artist}
-                  index={index}
-                  totalArtists={artists.length}
-                />
-              ))}
+      <div>
+        {/* Mobile/Tablet: Horizontal scroll */}
+        <div className="flex lg:hidden overflow-x-auto scrollbar-hide gap-0">
+          {artists.map((artist, index) => (
+            <ArtistCard
+              key={artist._id}
+              artist={artist}
+              index={index}
+              totalArtists={artists.length}
+            />
+          ))}
+        </div>
+        
+        {/* Desktop: Grid with snap points for each row */}
+        <div className="hidden lg:block">
+          {artistRows.map((row, rowIndex) => (
+            <div
+              key={rowIndex}
+              className="lg:grid lg:grid-cols-3 lg:gap-0"
+            >
+              {row.map((artist, artistIndex) => {
+                const globalIndex = rowIndex * 3 + artistIndex;
+                return (
+                  <ArtistCard
+                    key={artist._id}
+                    artist={artist}
+                    index={globalIndex}
+                    totalArtists={artists.length}
+                  />
+                );
+              })}
             </div>
-          </div>
+          ))}
         </div>
 
         {/* Empty state */}

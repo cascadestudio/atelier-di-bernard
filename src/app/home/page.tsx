@@ -10,7 +10,7 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-white">
       <Header />
-      <div className="h-screen pt-[49px] flex flex-col border-b border-[var(--blue)] lg:flex-row">
+      <div className="h-screen pt-[var(--header-height)] flex flex-col border-b border-[var(--blue)] lg:flex-row">
         <div className="w-full lg:w-1/2 h-1/2 lg:h-full bg-[var(--pink)] flex flex-col justify-end p-4 md:p-8">
           <h3 className="text-[var(--blue)]">L&apos;Atelier di Bernard</h3>
           <h1>Un espace collectif de création</h1>

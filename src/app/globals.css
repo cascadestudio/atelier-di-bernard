@@ -33,17 +33,20 @@
   --pink: #efcdc9;
   --light-blue: #e4f4f4;
   --header-height: 49px;
+  --header-height-scrolled: 40px;
 }
 
 @media (min-width: 768px) {
   :root {
     --header-height: 65px;
+    --header-height-scrolled: 50px;
   }
 }
 
 @media (min-width: 1024px) {
   :root {
     --header-height: 73px;
+    --header-height-scrolled: 55px;
   }
 }
 
@@ -52,6 +55,10 @@
     --background: var(--blue);
     --foreground: #ffffff;
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
