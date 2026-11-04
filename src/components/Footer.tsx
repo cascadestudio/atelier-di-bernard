@@ -87,9 +87,9 @@ export default function Footer() {
             ©{new Date().getFullYear()}, Atelier di Bernard.
             Créé&nbsp;avec&nbsp;❤️&nbsp;par&nbsp;
             <a
-              href="https://cascadestudio.fr"
+              href="https://www.cascadestudio.fr/credit/atelier-di-bernard"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               className="text-white hover:text-gray-300 transition-colors underline"
             >
               le&nbsp;studio&nbsp;Cascade
